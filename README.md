@@ -1,6 +1,15 @@
+# AsclepiusAI
+
+## Name: AsclepiusAI - Hypercholesterolemia Predictor AI tool
+
+## Description:
+  AsclepiusAI is an advanced AI-powered platform for long-term hypercholesterolemia prediction using state-of-the-art machine-learning techniques. Tailored for senior citizens and healthcare professionals, our system analyzes health metrics to provide early risk assessments, enabling proactive cholesterol management and preventive care. By leveraging data-driven insights, we help improve cardiovascular health outcomes and support healthcare institutions in optimizing patient care.
+
+## Tools used:
+  
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
