@@ -39,7 +39,7 @@ export default function Header()
             </dd>
           </dl>
         </div>   
-        <div className="text-stone-100 flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] ">
+        <div className="text-[#CED1BF] flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] ">
               <>
                 <button 
                   className={btnStyles}
