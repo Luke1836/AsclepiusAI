@@ -3,6 +3,13 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Basic&family=DM+Serif+Text:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
+/* Variables */
+:root {
+  --quantity: 2;
+  --widthItem: 1118px;
+}
+
+
 /* GENERAL STYLES */
 * {
     margin: 0;
@@ -94,53 +101,21 @@ button {
   z-index: -1;
 }
 
-.head {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 999;
-    color: whitesmoke;
-    font-family: 'Instrument Serif', serif;
-    font-size: 2.5rem;
-    letter-spacing: 0.25rem;
-    
+
+/* Animation */
+.marquee {
+  animation: marquee 8s linear infinite;
 }
 
-.btn-container {
-    position: absolute;
-    bottom: 7%;
-    left: 4%;
-    z-index: 999;
-    height: 2rem;
-    width: 8.5rem;
-    background: white;
-    color: dodgerblue;
-    font-weight: 500;
-    font-size: 1rem;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.marquee2 {
+  animation-delay: 4s;
 }
 
-.btn-container span {
-    display: inline;
-}
-
-.switch {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgb(23, 107, 191);
-    border-radius: 8px;
-    margin: 0;
-    display: block;
-    transition: left 0.3s ease;
-}
-
-.slide {
-    left: 50%;
+@keyframes marquee {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(-100%, 0);
+  }
 }
