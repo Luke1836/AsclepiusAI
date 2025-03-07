@@ -18,7 +18,7 @@ export default function VideoPlayer() {
   const words = ["Innovation", "Implementation", "Health", "About", "Contact"];
   
   return (
-    <main className="relative min-h-screen w-full">
+    <main className="relative h-screen w-full">
       { isClient && (
         <>
           <Header />
