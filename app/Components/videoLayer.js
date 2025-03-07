@@ -43,10 +43,10 @@ export default function VideoPlayer() {
               <div className="h-[6rem] w-[2rem]"></div>
               <motion.div
                 className="flex gap-8 whitespace-nowrap"
-                initial={{ x: "-2%" }}
+                initial={{ x: "0%" }}
                 animate={{ x: "-100%" }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear",  }}
-              >&nbsp;&nbsp;
+              >
                 {words.map((word, index) => (
                   <div key={index} className="flex items-center gap-8">
                     <span className="text-[6rem] text-white font-dmserif">{word}</span>
