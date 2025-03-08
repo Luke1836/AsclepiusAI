@@ -44,7 +44,8 @@ export default function Header()
               </a>
             </dd>
           </dl>
-          <div className="text-[#CED1BF] flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] ">
+        </div> 
+        <div className="text-[#CED1BF] md:flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] hidden">
               <>
                 <button 
                   className={btnStyles}
@@ -59,8 +60,7 @@ export default function Header()
                   Register
                 </button>
               </>
-        </div>
-        </div>   
+        </div>  
       </header>
   );
 }
