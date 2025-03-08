@@ -26,7 +26,7 @@ export default function VideoPlayer() {
             {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */} 
           </video>
           <div className="transparent absolute top-[65%] contrast-200 mb-16">
-            <div className="min-w-svw h-[8rem] overflow-hidden relative flex flex-row">
+            <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">
               <motion.div
                 className="flex gap-8 whitespace-nowrap"
                 initial={{ x: "0%" }}
@@ -40,7 +40,6 @@ export default function VideoPlayer() {
                   </div>
                 ))}
               </motion.div>
-              <div className="h-[6rem] w-[2rem]"></div>
               <motion.div
                 className="flex gap-8 whitespace-nowrap"
                 initial={{ x: "0%" }}
@@ -56,10 +55,13 @@ export default function VideoPlayer() {
               </motion.div>
             </div>
           </div>
-          <div className="w-full h-[4rem] absolute top-[88%] border-t-1 border-t-[#CED1BF] mx-auto grid place-content-center contrast-200">
+          <div className="w-full h-[4rem] absolute top-[88%] border-t-1 border-t-[#CED1BF] mx-auto grid place-content-center">
             <div className="h-[4rem] w-[30rem] text-[#CED1BF] text-center grid place-content-center">
               AI in medicine isn’t about replacing doctors; it’s about giving them superpowers to predict, prevent, and personalize care
             </div>
+          </div>
+          <div className="h-[4rem] text-[#CED1BF] text-[1.25rem] absolute top-[88%] left-[85%] grid place-content-center">
+              Scroll to Explore
           </div>
         </>
       ) }
