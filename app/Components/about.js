@@ -48,7 +48,7 @@ export default function AboutPage()
   return (
     <section id="about" className="w-full h-[200vh] bg-[#2b3530]">
       <div className="w-full h-[100vh] flex flex-col lg:flex-row items-center gap-1">
-        <div className="text-[1rem] md:text-[2rem] text-[#CED1BF] w-[90%] lg:w-[35%] text-center p-4 grid place-content-center">
+        <div className="text-[1rem] md:text-[2rem] text-[#CED1BF] w-[90%] lg:w-[35%] text-center p-4">
           Welcome to <span className='text-[#CA7D57]'>AsclepiusAI</span> – The Future of Predictive Healthcare
         </div>
         <div className="w-[90vw] lg:w-[55vw] h-[100vh] grid place-content-center">  

@@ -6,11 +6,17 @@ export default function Header()
 
 
   return (
-    <header className="w-full h-[8rem] absolute top-0 left-0 flex flex-row items-center justify-evenly p-[1.5rem] z-50">
+    <header className="w-full h-[8rem] absolute top-0 left-0 flex flex-row items-center justify-between lg:justify-evenly p-[1.5rem] z-50">
       <div className="h-[10rem] w-[10rem] grid content-center mx-8">
           <img src="/Logo.png" alt="Company's logo" />
       </div>
-      <div className={`hidden md:flex flex-row `}>
+      <div className="md:hidden">
+        <button className="md:hidden menuButton">
+          <div className="menuIcon"></div>
+        </button>
+        {/* <Navbar isClicked={isHamClicked} isLogged={isLogged} /> */}
+      </div>
+      <div className={`hidden md:flex flex-row`}>
           <dl className="flex flex-row items-center justify-center gap-[1.25rem] lg:gap-[2rem]">
             <dd>
               <a href="#about" className={ navItems }>
@@ -38,8 +44,7 @@ export default function Header()
               </a>
             </dd>
           </dl>
-        </div>   
-        <div className="text-[#CED1BF] flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] ">
+          <div className="text-[#CED1BF] flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] ">
               <>
                 <button 
                   className={btnStyles}
@@ -55,6 +60,7 @@ export default function Header()
                 </button>
               </>
         </div>
+        </div>   
       </header>
   );
 }
