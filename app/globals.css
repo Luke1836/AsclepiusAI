@@ -201,3 +201,41 @@ button {
       transform: translateX(-20px) rotate(-45deg);
   }
 }
+
+
+/* Animation */
+.autoShow-1 {
+  animation: autoShowAnimation 1.2s cubic-bezier(0.42, 0, 1, 1) forwards;
+}
+
+.autoShow-2 {
+  animation: autoShowAnimation 1.2s cubic-bezier(0.3, 0.2, 1, 1) forwards;
+  animation-delay: 0.2;
+}
+
+.autoShow {
+  animation: autoShowAnimationMain both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes autoShowAnimationMain {
+  from {
+    opacity: 0;
+    transform: translateY(150px) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
