@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 
 export default function Header()
 {
   const navItems = "capitalize  font-basic text-[1rem] md:text-lg text-[#CED1BF] shadow-text-light hover:text-[#41A1BC]";
-  const btnStyles = "capitalize  w-[5rem] py-2 blur-background-max hover:text-[#41A1BC] shadow-text-light text-[1.25rem]";
+  const btnStyles = "capitalize  w-[8rem] py-2 blur-background-max hover:text-[#41A1BC] shadow-text-light text-[1.25rem]";
 
 
   return (
@@ -47,18 +49,13 @@ export default function Header()
         </div> 
         <div className="text-[#CED1BF] md:flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] hidden">
               <>
-                <button 
-                  className={btnStyles}
-                  
-                >
-                  Login
-                </button>
-                <button 
-                  className={btnStyles}
-                     
-                >
-                  Register
-                </button>
+                <Link href='\model'>
+                  <button 
+                    className={btnStyles}
+                  >
+                    Try it Out
+                  </button>
+                </Link>
               </>
         </div>  
       </header>

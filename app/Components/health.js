@@ -14,7 +14,7 @@ export default function HealthPage()
           <FontAwesomeIcon icon={ faBars } size="2xl" className="text-[#CED1BF] translate-y-1 hidden md:block" />
           <span className="text-[#CED1BF] capitalize text-[3rem]">Health</span>
         </p>
-        <div className="hidden md:block w-full h-full" >
+        <div className="hidden md:block w-full h-full p-16" >
             <img src='/Photo-mini-project.jpg' alt='health' loading='lazy' className='w-full h-full object-fill'/> 
         </div>  
       </div>

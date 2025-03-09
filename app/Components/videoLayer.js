@@ -1,6 +1,5 @@
 "use client"; // Ensure this is a Client Component
 
-import Header from "./header";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,7 +20,6 @@ export default function VideoPlayer() {
     <main className="relative h-screen w-full">
       { isClient && (
         <>
-          <Header />
           <video className="video-container bg-amber-950" muted loop autoPlay>
             {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */} 
           </video>
