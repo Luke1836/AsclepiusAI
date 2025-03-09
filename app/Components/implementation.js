@@ -43,9 +43,9 @@ export default function ImplementationPage() {
           start: "top top",
           end: "+=" + window.innerHeight * (sections.length - 1),
           pin: true,
-          scrub: 0.5, // Reduce scrub delay for faster transitions
-          snap: { snapTo: 1 / (sections.length - 1), duration: 0.5, ease: "power3.out" }, // Faster snapping
-          anticipatePin: 0.5, // Reduce pin lag
+          scrub: 0.5,
+          snap: { snapTo: 1 / (sections.length - 1), duration: 0.5, ease: "power3.out" },
+          anticipatePin: 0.5,
         },
       });
   
