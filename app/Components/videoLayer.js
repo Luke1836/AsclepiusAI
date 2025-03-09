@@ -21,7 +21,7 @@ export default function VideoPlayer() {
       { isClient && (
         <>
           <video className="video-container bg-amber-950" muted loop autoPlay>
-            {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */} 
+            <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> 
           </video>
           <div className="transparent absolute top-[65%] contrast-200 mb-16 autoShow-1">
             <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">

@@ -14,12 +14,12 @@ export default function HealthPage()
           <FontAwesomeIcon icon={ faBars } size="2xl" className="text-[#CED1BF] translate-y-1 hidden md:block" />
           <span className="text-[#CED1BF] capitalize text-[3rem]">Health</span>
         </p>
-        <div className="hidden md:block w-full h-full p-16" >
+        <div className="hidden md:block w-full h-full pr-16 py-16" >
             <img src='/Photo-mini-project.jpg' alt='health' loading='lazy' className='w-full h-full object-fill'/> 
         </div>  
       </div>
 
-      <div className='md:w-[50%] w-full h-[90vh] md:h-[100vh] flex flex-col items-center justify-start md:justify-center gap-8'>
+      <div className='md:w-[60%] w-full h-[90vh] md:h-[100vh] flex flex-col items-center justify-start md:justify-center gap-8'>
           <p className='w-[80%] text-[#CED1BF] text-[1rem] lg:text-[1.5rem]'>
             &nbsp;&nbsp;&nbsp;<span className='text-[#CA7D57]'>Hypercholesterolemia</span> commonly referred to as high cholesterol, is a condition in which excess cholesterol circulates in the bloodstream, increasing the risk of heart disease and stroke. Cholesterol is a fatty substance essential for cell function, but an imbalance—especially high levels of LDL (low-density lipoprotein) cholesterol—can lead to plaque buildup in the arteries, restricting blood flow.
           </p>
