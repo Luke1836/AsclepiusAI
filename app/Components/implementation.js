@@ -73,8 +73,8 @@ export default function ImplementationPage() {
           }`}
           style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
-          <div className="bg-[#CED1BF] text-[#2b3530] w-[40vw] h-[98vh] flex flex-col justify-center items-center p-8 rounded-lg shadow-2xl">
-            <h2 className="text-[2rem] font-bold mb-4 text-center">{item.title}</h2>
+          <div className="bg-[#CED1BF] text-[#2b3530] w-[85vw] md:w-[40vw] h-[98vh] flex flex-col justify-center items-center p-8 rounded-lg shadow-2xl">
+            <h2 className="text-[1.5rem] md:text-[2rem] font-bold mb-4 text-center">{item.title}</h2>
             <img src={item.image} alt={item.title} className="w-3/4 h-1/2 rounded-lg shadow-lg mb-4" />
             <p className="text-center text-[1rem] px-4">{item.description}</p>
           </div>
