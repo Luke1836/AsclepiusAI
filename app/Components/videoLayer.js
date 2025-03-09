@@ -5,11 +5,25 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
-export default function VideoPlayer() {
+export default function VideoPlayer() 
+{
   const [isClient, setIsClient] = useState(false);
-
+  const [scrollDirection, setScrollDirection] = useState("left");
   useEffect(() => {
     setIsClient(true);
+
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setScrollDirection("right");
+      } else {
+        setScrollDirection("left");
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
 
@@ -21,14 +35,14 @@ export default function VideoPlayer() {
       { isClient && (
         <>
           <video className="video-container bg-amber-950" muted loop autoPlay>
-            <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> 
+            {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */} 
           </video>
           <div className="transparent absolute top-[65%] contrast-200 mb-16 autoShow-1">
             <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">
               <motion.div
                 className="flex gap-8 whitespace-nowrap"
                 initial={{ x: "0%" }}
-                animate={{ x: "-100%" }}
+                animate={{ x: scrollDirection === "left" ? "-100%" : "0%" }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
               >
                 {words.map((word, index) => (
@@ -41,7 +55,7 @@ export default function VideoPlayer() {
               <motion.div
                 className="flex gap-8 whitespace-nowrap"
                 initial={{ x: "0%" }}
-                animate={{ x: "-100%" }}
+                animate={{ x: scrollDirection === "left" ? "-100%" : "0%" }}
                 transition={{ repeat: Infinity, duration: 20, ease: "linear",  }}
               >
                 {words.map((word, index) => (
@@ -54,11 +68,11 @@ export default function VideoPlayer() {
             </div>
           </div>
           <div className="w-full h-[4rem] absolute top-[88%] border-t-1 border-t-[#CED1BF] mx-auto grid place-content-center">
-            <div className="h-[4rem] w-[15rem] md:w-[30rem] text-[0.5rem] md:text-[1rem] text-[#CED1BF] text-center grid place-content-center autoShow-2">
+            <div className="h-[4rem] w-[16rem] md:w-[30rem] text-[0.75rem] md:text-[1rem] text-[#CED1BF] text-center grid place-content-center autoShow-2 font-medium">
               AI in medicine isn’t about replacing doctors; it’s about giving them superpowers to predict, prevent, and personalize care
             </div>
           </div>
-          <div className="h-[4rem] text-[#CED1BF] hidden md:block text-[1.25rem] absolute top-[88%] left-[85%] lg:grid place-content-center autoShow-2">
+          <div className="h-[4rem] text-[#CED1BF] hidden md:block text-[1.25rem] absolute top-[88%] left-[85%] lg:grid place-content-center autoShow-2 font-medium">
               Scroll to Explore
           </div>
         </>
