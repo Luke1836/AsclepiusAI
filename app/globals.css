@@ -219,6 +219,7 @@ button {
   animation-timeline: view(70% 5%);
 }
 
+
 @keyframes autoShowAnimation {
   from {
     opacity: 0;
