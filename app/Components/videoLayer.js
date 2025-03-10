@@ -11,7 +11,7 @@ export default function VideoPlayer()
 {
   const [isClient, setIsClient] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("left");
-  const [animationSpeed, setAnimationSpeed] = useState(20); // Default speed
+  const [animationSpeed, setAnimationSpeed] = useState(20);
 
   useEffect(() => {
     setIsClient(true);
