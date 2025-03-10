@@ -38,7 +38,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="w-full h-screen flex">
+    <section className="w-full h-screen flex" id="contact">
       {/* Left Side - Contact Form */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-10 text-[#30493D] bg-[#CED1BF]">
         <h2 className="text-3xl font-bold mb-4 text-center">Connect with AsclepiusAI</h2>
@@ -63,6 +63,6 @@ export default function ContactPage() {
         style={{ backgroundImage: "url('/Photos-mini-project-1.jpg')", backgroundSize: "100%", backgroundPosition: "center" }}
       ></div>
 
-    </main>
+    </section>
   );
 }

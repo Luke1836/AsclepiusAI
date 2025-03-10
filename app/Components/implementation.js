@@ -4,7 +4,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function ImplementationPage() {
+export default function ImplementationPage() 
+{
   gsap.registerPlugin(ScrollTrigger);
 
   const data = [
@@ -63,7 +64,7 @@ export default function ImplementationPage() {
   
 
   return (
-    <section ref={sectionRef} className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[#2b3530]">
+    <section id="implementation" ref={sectionRef} className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[#2b3530]">
       {data.map((item, index) => (
         <div
           key={index}

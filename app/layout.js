@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "./Components/header";
+
 
 export const metadata = {
   title: "AsclepiusAI - Hypercholesterolemia Predictor",
@@ -10,7 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
         { children }
       </body>
     </html>
