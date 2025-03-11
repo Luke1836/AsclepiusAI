@@ -2,16 +2,16 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import Header from "./header";
-
 
 export default function VideoPlayer() 
 {
   const [isClient, setIsClient] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("left");
   const [animationSpeed, setAnimationSpeed] = useState(20);
+  const [position, setPosition] = useState(0);
 
   useEffect(() => {
     setIsClient(true);
@@ -23,7 +23,7 @@ export default function VideoPlayer()
         setAnimationSpeed(20);
       } else {
         setScrollDirection("left");
-        setAnimationSpeed(prevSpeed => Math.max(16, prevSpeed - 1));
+        setAnimationSpeed(15);
       }
       lastScrollY = window.scrollY;
     };
@@ -39,18 +39,16 @@ export default function VideoPlayer()
       {isClient && (
         <>
           <Header />
-          <video className="video-container bg-amber-950" muted loop autoPlay>
-            {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */}
-          </video>
+          <video className="video-container bg-amber-950" muted loop autoPlay />
           <div className="transparent absolute top-[65%] contrast-200 mb-16 autoShow-1">
             <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">
               {[...Array(2)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="flex gap-8 whitespace-nowrap"
-                  initial={{ x: "0%" }}
-                  animate={{ x: scrollDirection === "left" ? "-100%" : "30%" }}
-                  transition={{ repeat: Infinity, duration: animationSpeed, ease: "linear" }}
+                  initial={{ x: scrollDirection === "left" ? "0%" : "-100%" }}
+                  animate={{ x: scrollDirection === "left" ? "-100%" : "0%" }}
+                  transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
                 >
                   {words.map((word, index) => (
                     <div key={index} className="flex items-center gap-8">
