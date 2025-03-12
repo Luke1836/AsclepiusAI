@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import Header from "./header";
+
 
 export default function VideoPlayer() 
 {
@@ -30,10 +32,13 @@ export default function VideoPlayer()
   const words = ["Innovation", "Implementation", "Health", "About", "Contact"];
 
   return (
-    <main className="relative h-screen w-full">
+    <section className="relative h-screen w-full">
       {isClient && (
         <>
-          <video className="video-container bg-amber-950" muted loop autoPlay />
+          <Header />
+          <video className="video-container bg-amber-950" muted loop autoPlay>
+            {/* <source src="https://res.cloudinary.com/dydapmxhv/video/upload/v1741276311/final-1_1_mhgveb.mp4" type="video/mp4" /> */}
+          </video>
           <div className="transparent absolute top-[65%] contrast-200 mb-16 autoShow-1">
             <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">
               {[...Array(2)].map((_, i) => (
@@ -64,6 +69,6 @@ export default function VideoPlayer()
           </div>
         </>
       )}
-    </main>
+    </section>
   );
 }
