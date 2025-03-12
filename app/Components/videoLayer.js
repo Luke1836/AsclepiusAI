@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import Header from "./header";
 
 export default function VideoPlayer() 
 {
@@ -34,7 +33,6 @@ export default function VideoPlayer()
     <main className="relative h-screen w-full">
       {isClient && (
         <>
-          <Header />
           <video className="video-container bg-amber-950" muted loop autoPlay />
           <div className="transparent absolute top-[65%] contrast-200 mb-16 autoShow-1">
             <div className="w-svw h-[8rem] overflow-hidden relative flex flex-row gap-[1.5rem]">
