@@ -1,14 +1,38 @@
+'use client';
+
 import RoutingHeader from "./routeHeader";
+import { useEffect, useState } from 'react';
+
+
 export default function Hypercholesterolemia()
 {
+  const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
-  const headingSyles = "text-[1.5rem] mt-4 font-medium pb-2";
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY < lastScrollY - 10) {
+            setIsVisible(true);  // Show header when scrolling up by at least 10px
+          } else if (currentScrollY > lastScrollY + 20) {
+            setIsVisible(false); // Hide header when scrolling down by at least 10px
+          }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [lastScrollY]);
+
 
   return (
     <>
-      <RoutingHeader />
+      <RoutingHeader visible={`bg-[#30493D] sticky top-0 transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'translate-y-0' : '-translate-y-full border-b-none'}`} />
 
-      <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center pt-[10rem] pb-[1rem]">
+      <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center py-[2rem]">
         <div className="p-4 bg-[#CED1BF] text-[#30493D] w-[95%] rounded-2xl flex flex-col items-center">
           <h1 className="w-full p-2 border-b-2 border-b-amber-500 text-[1.75rem] md:text-[3.5rem]">Hypercholesterolemia & Your Health</h1>
           <div className="p-8">

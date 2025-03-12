@@ -7,7 +7,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#30493D]">
         { children }
       </body>
     </html>

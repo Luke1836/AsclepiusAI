@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 
-export default function RoutingHeader() 
+export default function RoutingHeader( { visible } ) 
 {
   const navItems = "capitalize font-sans text-[1rem] md:text-lg text-[#CED1BF] shadow-text-light hover:text-[#41A1BC]";
   const btnStyles = "capitalize font-sans w-[8rem] py-2 blur-background-max shadow-text-light hover:text-[#41A1BC] text-[1.25rem]";
 
 
   return (
-    <header className="w-full h-[8rem] absolute top-0 left-0 flex flex-row items-center justify-between p-[1.75rem] z-50 border-b-2 border-b-[#CED1BF]">
+    <header className={`w-full h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-50 border-b-2 border-b-[#CED1BF] transition-transform ${visible}`}>
       <div className="h-[10rem] w-[10rem] grid content-center">
         <Link href="/">
           <img src="/Logo.png" alt="Company's logo" />
