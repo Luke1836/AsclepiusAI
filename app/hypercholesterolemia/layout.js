@@ -1,3 +1,4 @@
+import RoutingHeader from "../Components/routeHeader";
 
 export const metadata = {
   title: "Hypercholesterolemia and Your Health",
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body>
+        <RoutingHeader />
         { children }
       </body>
     </html>

@@ -134,7 +134,6 @@ export default function Hypercholesterolemia()
         </div>
         <div className="w-full border-t-2 border-t-amber-500 p-8">
           <h2 className="text-[2rem] pb-2 font-semibold text-center"><span className="block md:inline-block">🔬</span> Precision. <span className="text-[#CA7D57] font-medium">Prevention. </span><span className="block md:inline-block">Progress.</span>  <span className="text-[#CA7D57] font-medium">Welcome to the Future of AI-Driven Healthcare.</span></h2>
-          
         </div>
       </div>
     </section>
