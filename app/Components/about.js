@@ -3,46 +3,33 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function AboutPage()
-{
-  const componentRef = useRef(null);  
-  const [isVisible, setIsVisible] = useState(false);
+gsap.registerPlugin(ScrollTrigger);
+
+export default function AboutPage() {
+  const componentRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.35 }
-    );
-
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+    if (componentRef.current && imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { y: "-10%" },
+        {
+          y: "10%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: componentRef.current,
+            start: "top bottom",
+            end: "bottom top",   
+            scrub: 1,               
+          },
+        }
+      );
     }
-
-    return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
-      }
-    };
   }, []);
-
-  useEffect(() => {
-    if (!isVisible) return; // Sync scroll only when visible
-
-    const syncScroll = () => {
-      const scrollY = window.scrollY;
-      if (componentRef.current) {
-        componentRef.current.scrollTop = 0.35 * scrollY;
-      }
-    };
-
-    window.addEventListener("scroll", syncScroll);
-    return () => {
-      window.removeEventListener("scroll", syncScroll);
-    };
-  }, [isVisible]);
 
 
   return (
