@@ -8,7 +8,7 @@ export default function Hypercholesterolemia()
     <>
       <RoutingHeader />
 
-      <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center py-[10rem]">
+      <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center pt-[10rem] pb-[1rem]">
         <div className="p-4 bg-[#CED1BF] text-[#30493D] w-[95%] rounded-2xl flex flex-col items-center">
           <h1 className="w-full p-2 border-b-2 border-b-amber-500 text-[1.75rem] md:text-[3.5rem]">Hypercholesterolemia & Your Health</h1>
           <div className="p-8">
