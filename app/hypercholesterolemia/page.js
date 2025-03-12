@@ -28,7 +28,7 @@ export default function Hypercholesterolemia()
           </div>
         </div>
 
-        <div className="w-full border-t-2 border-t-amber-500 p-8">
+        <div className="w-full border-t-2 border-t-amber-500 p-4">
           <h2 className="text-[2rem] pb-2">Risk Factors</h2>
           <p>&nbsp;&nbsp;Several factors contribute to hypercholesterolemia, some of which are controllable while others are genetic:</p>
           
