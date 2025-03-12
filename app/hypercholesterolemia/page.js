@@ -129,16 +129,12 @@ export default function Hypercholesterolemia()
               <li>📊 Personalized Insights: Custom health plans based on unique patient data.</li>
               <li>💡 Data-Driven Prevention: Encourages proactive lifestyle modifications.</li>
             </ul>
-            <p>At <span className="text-[#CA7D57]">AsclepiusAI</span>, we are committed to harnessing the power of AI to revolutionize predictive healthcare, ensuring that individuals have access to the insights they need to take charge of their health.</p>
+            <p className="p-4">&nbsp;&nbsp;At <span className="text-[#CA7D57] font-medium">AsclepiusAI</span>, we are committed to harnessing the power of AI to revolutionize predictive healthcare, ensuring that individuals have access to the insights they need to take charge of their health.</p>
           </div>
-
-          <div className="pl-2">
-            <h3 className="text-[1.5rem] font-medium mt-4 pb-2">Medical Management:</h3>
-            <ul className="list-disc list-inside space-y-2 pl-4">
-              <li>Regular cholesterol screenings (especially if at risk).</li>
-              <li>Medications like statins may be prescribed for severe cases.</li>
-            </ul>
-          </div>
+        </div>
+        <div className="w-full border-t-2 border-t-amber-500 p-8">
+          <h2 className="text-[2rem] pb-2 font-semibold text-center"><span className="block md:inline-block">🔬</span> Precision. <span className="text-[#CA7D57] font-medium">Prevention. </span><span className="block md:inline-block">Progress.</span>  <span className="text-[#CA7D57] font-medium">Welcome to the Future of AI-Driven Healthcare.</span></h2>
+          
         </div>
       </div>
     </section>
