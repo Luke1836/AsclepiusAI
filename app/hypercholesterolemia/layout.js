@@ -1,4 +1,4 @@
-import RoutingHeader from "../Components/routeHeader";
+import RoutingHeader from "./routeHeader";
 
 export const metadata = {
   title: "Hypercholesterolemia and Your Health",
