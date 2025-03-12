@@ -8,7 +8,7 @@ export default function RoutingHeader()
 
 
   return (
-    <header className="bg-teal-700 w-full h-[8rem] absolute top-0 left-0 flex flex-row items-center justify-between p-[1.75rem] z-50">
+    <header className="w-full h-[8rem] absolute top-0 left-0 flex flex-row items-center justify-between p-[1.75rem] z-50 border-b-2 border-b-[#CED1BF]">
       <div className="h-[10rem] w-[10rem] grid content-center">
         <Link href="/">
           <img src="/Logo.png" alt="Company's logo" />
