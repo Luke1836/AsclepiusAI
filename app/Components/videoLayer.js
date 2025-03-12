@@ -10,8 +10,6 @@ export default function VideoPlayer()
 {
   const [isClient, setIsClient] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("left");
-  const [animationSpeed, setAnimationSpeed] = useState(20);
-  const [position, setPosition] = useState(0);
 
   useEffect(() => {
     setIsClient(true);
@@ -20,10 +18,8 @@ export default function VideoPlayer()
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setScrollDirection("right");
-        setAnimationSpeed(20);
       } else {
         setScrollDirection("left");
-        setAnimationSpeed(15);
       }
       lastScrollY = window.scrollY;
     };

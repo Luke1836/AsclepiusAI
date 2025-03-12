@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 export default function Hypercholesterolemia()
 {
   const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,7 +15,7 @@ export default function Hypercholesterolemia()
 
           if (currentScrollY < lastScrollY - 10) {
             setIsVisible(true);  // Show header when scrolling up by at least 10px
-          } else if (currentScrollY > lastScrollY + 20) {
+          } else if (currentScrollY > lastScrollY + 10) {
             setIsVisible(false); // Hide header when scrolling down by at least 10px
           }
 
