@@ -3,10 +3,36 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HealthPage()
 {
+  const componentRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    if (componentRef.current && imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { y: "-10%" },
+        {
+          y: "10%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: componentRef.current,
+            start: "top bottom",
+            end: "bottom top",   
+            scrub: 1,               
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <section id="health" className="w-full h-svh bg-[#30493D] flex flex-col md:flex-row overflow-hidden">
       <div className="w-full md:w-[50%] h-[5rem] md:h-[100vh] grid place-content-center">
