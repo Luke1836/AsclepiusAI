@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import RoutingHeader from "./routeHeader";
 
 export default function Hypercholesterolemia() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,8 @@ export default function Hypercholesterolemia() {
   };
 
   return (
-    <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center py-[2rem]">
+    <section className="h-auto w-full bg-[#30493D] flex flex-col items-center justify-center pb-[2rem]">
+      <RoutingHeader />
       <div className="p-4 bg-[#CED1BF] text-[#30493D] w-[95%] md:w-[80%] rounded-2xl flex flex-col items-center">
         <h2 className="text-[2.5rem] text-center font-bold mb-4">Hypercholesterolemia Prediction</h2>
 
