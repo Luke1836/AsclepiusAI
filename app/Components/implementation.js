@@ -1,48 +1,59 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ImplementationPage() {
   const sectionRefs = useRef([]);
+  const imageRefs = useRef([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("pop-in");
-            observer.unobserve(entry.target);
+    imageRefs.current.forEach((image, index) => {
+      if (image) {
+        gsap.fromTo(
+          image,
+          { y: "-10%" },
+          {
+            y: "10%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRefs.current[index],
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+            },
           }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    sectionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
+        );
+      }
     });
-
-    return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="w-full z-100 ">
+    <section className="w-full bg-[#30493D] overflow-hidden">
       {/* Section 1 */}
       <div
-        ref={(el) => (sectionRefs.current[0] = el)}
-        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center"
+        ref={(el) => {
+          if (el) sectionRefs.current[0] = el;
+        }}
+        className="w-full py-16 md:py-24 flex items-center justify-center bg-[#30493D] text-[#CED1BF] origin-bottom p-8"
+        style={{ transform: "skewY(6deg)" }}
       >
-        <div
-          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
-          style={{ backgroundImage: "url('/Data_charts.jpg')" }}
-        >
-          <div
-            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
-            style={{ transform: "skewY(-12deg) translateX(10%)" }}
-          ></div>
+        <div className="w-full md:w-1/2 h-[300px] md:h-[500px] relative overflow-hidden">
+          <img
+            ref={(el) => {
+              if (el) imageRefs.current[0] = el;
+            }}
+            src="/Data_charts.jpg"
+            alt="Data Charts"
+            className="absolute w-full h-full object-cover"
+          />
         </div>
-        <div className="w-full md:w-1/2 p-8 md:p-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+
+        <div className="w-full md:w-1/2 p-8 md:p-16 transform -skew-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-[#CA7D57] shadow-text">
             Data Preprocessing and Feature Engineering
           </h2>
           <p className="text-lg">
@@ -53,20 +64,25 @@ export default function ImplementationPage() {
 
       {/* Section 2 */}
       <div
-        ref={(el) => (sectionRefs.current[1] = el)}
-        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center flex-row-reverse"
+        ref={(el) => {
+          if (el) sectionRefs.current[1] = el;
+        }}
+        className="w-full py-16 md:py-24 flex items-center justify-center flex-row-reverse text-[#CED1BF] origin-center p-8"
+        style={{ transform: "skewY(-6deg)" }}
       >
-        <div
-          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
-          style={{ backgroundImage: "url('/AI_brain.jpg')" }}
-        >
-          <div
-            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
-            style={{ transform: "skewY(12deg) translateX(-10%)" }}
-          ></div>
+        <div className="w-full md:w-1/2 h-[300px] md:h-[500px] relative overflow-hidden">
+          <img
+            ref={(el) => {
+              if (el) imageRefs.current[1] = el;
+            }}
+            src="/AI_brain.jpg"
+            alt="AI Brain"
+            className="absolute w-full h-full object-cover"
+          />
         </div>
-        <div className="w-full md:w-1/2 p-8 md:p-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+
+        <div className="w-full md:w-1/2 p-8 md:p-16 skew-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-[#CA7D57] shadow-text">
             Machine Learning Models
           </h2>
           <p className="text-lg">
@@ -77,20 +93,25 @@ export default function ImplementationPage() {
 
       {/* Section 3 */}
       <div
-        ref={(el) => (sectionRefs.current[2] = el)}
-        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center"
+        ref={(el) => {
+          if (el) sectionRefs.current[2] = el;
+        }}
+        className="w-full py-16 md:py-24 flex items-center justify-center bg-[#30493D] text-[#CED1BF] origin-bottom p-8"
+        style={{ transform: "skewY(6deg)" }}
       >
-        <div
-          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
-          style={{ backgroundImage: "url('/Futuristic.jpg')" }}
-        >
-          <div
-            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
-            style={{ transform: "skewY(-12deg) translateX(10%)" }}
-          ></div>
+        <div className="w-full md:w-1/2 h-[300px] md:h-[500px] relative overflow-hidden">
+          <img
+            ref={(el) => {
+              if (el) imageRefs.current[2] = el;
+            }}
+            src="/Futuristic.jpg"
+            alt="Futuristic"
+            className="absolute w-full h-full object-cover"
+          />
         </div>
-        <div className="w-full md:w-1/2 p-8 md:p-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+
+        <div className="w-full md:w-1/2 p-8 md:p-16 -skew-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-[#CA7D57] shadow-text">
             Framework and Tools
           </h2>
           <p className="text-lg">
