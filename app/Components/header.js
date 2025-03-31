@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 
-
-export default function Header({ visible  }) 
-{
-  const navItems = "capitalize font-sans text-[1rem] md:text-lg text-[#CED1BF] shadow-text-light hover:text-[#41A1BC]";
-  const btnStyles = "capitalize font-sans w-[8rem] py-2 blur-background-max shadow-text-light hover:text-[#41A1BC] text-[1.25rem]";
+export default function Header({ visible }) {
+  const navItems =
+    "capitalize font-sans text-[1rem] md:text-lg text-[#CED1BF] shadow-text-light hover:text-[#41A1BC]";
+  const btnStyles =
+    "capitalize font-sans w-[8rem] py-2 blur-background-max shadow-text-light hover:text-[#41A1BC] text-[1.25rem]";
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -16,7 +16,9 @@ export default function Header({ visible  })
   };
 
   return (
-    <header className={`w-full h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-100 ${visible}`}>
+    <header
+      className={`w-full h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-100 ${visible}`}
+    >
       <div className="h-[10rem] w-[10rem] grid content-center">
         <Link href="/">
           <img src="/Logo.png" alt="Company's logo" />
@@ -48,19 +50,25 @@ export default function Header({ visible  })
             </button>
           </dd>
           <dd>
-            <button onClick={() => handleScroll("innovation")} className={navItems}>
+            <button
+              onClick={() => handleScroll("innovation")}
+              className={navItems}
+            >
               Innovation
             </button>
           </dd>
           <dd>
-            <button onClick={() => handleScroll("contact")} className={navItems}>
+            <button
+              onClick={() => handleScroll("contact")}
+              className={navItems}
+            >
               Contact
             </button>
           </dd>
         </dl>
       </div>
       <div className="text-[#CED1BF] md:flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] hidden">
-        <Link href="/model">
+        <Link href="/modal">
           <button className={btnStyles}>Try it Out</button>
         </Link>
       </div>
