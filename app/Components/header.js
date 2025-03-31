@@ -16,7 +16,7 @@ export default function Header({ visible  })
   };
 
   return (
-    <header className={`w-full h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-100 ${visible}`}>
+    <header className={`w-full h-[6rem] xl:h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-100 ${visible}`}>
       <div className="h-[10rem] w-[10rem] grid content-center">
         <Link href="/">
           <img src="/Logo.png" alt="Company's logo" />
