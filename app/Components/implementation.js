@@ -1,86 +1,103 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef, useEffect } from "react";
 
-export default function ImplementationPage() 
-{
-  gsap.registerPlugin(ScrollTrigger);
-
-  const data = [
-    {
-      image: "/Data_charts.jpg",
-      title: "Data Preprocessing and Feature Engineering",
-      description:
-        "The dataset used for this study was obtained from a standard dataset and consists of multiple patient records containing clinical attributes (16) relevant to hypercholesterolemia prediction. The key steps in data preprocessing included: Handling Missing Values, Feature Selection, Normalization & Standardization, Categorical Encoding, and Train-Test Split.",
-    },
-    {
-      image: "/AI_brain.jpg",
-      title: "Machine Learning Models",
-      description:
-        "We experimented with multiple supervised learning models to determine the best algorithm for predicting long-term hypercholesterolemia risk. The models implemented were: Naïve Bayes, K-Nearest Neighbors, Decision Trees, Random Forest, Logistic Regression, Support Vector Machine, and XGBoost.",
-    },
-    {
-      image: "/Futuristic.jpg",
-      title: "Framework and Tools",
-      description:
-        "The implementation used Python with Scikit-learn, Pandas, NumPy, Matplotlib, and Seaborn. Development environments included Jupyter Notebook and Google Colab.",
-    },
-  ];
-
-  const sectionRef = useRef(null);
-  const slidesRef = useRef([]);
+export default function ImplementationPage() {
+  const sectionRefs = useRef([]);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-  
-      let sections = gsap.utils.toArray(".slide");
-  
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=" + window.innerHeight * (sections.length - 1),
-          pin: true,
-          scrub: 0.5,
-          snap: { snapTo: 1 / (sections.length - 1), duration: 0.5, ease: "power3.out" },
-          anticipatePin: 0.5,
-        },
-      });
-  
-      sections.forEach((section, index) => {
-        if (index > 0) {
-          tl.to(section, { opacity: 1, duration: 0.8, ease: "power3.out" }, index);
-        }
-      });
-  
-      return () => tl.kill();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("pop-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
     });
-  
-    return () => ctx.revert();
+
+    return () => observer.disconnect();
   }, []);
-  
 
   return (
-    <section id="implementation" ref={sectionRef} className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[#2b3530]">
-      {data.map((item, index) => (
+    <section className="w-full z-100 ">
+      {/* Section 1 */}
+      <div
+        ref={(el) => (sectionRefs.current[0] = el)}
+        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center"
+      >
         <div
-          key={index}
-          ref={(el) => (slidesRef.current[index] = el)}
-          className={`slide absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-700 ${
-            index === 0 ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
+          style={{ backgroundImage: "url('/Data_charts.jpg')" }}
         >
-          <div className="bg-[#CED1BF] text-[#2b3530] w-[85vw] md:w-[40vw] h-[98vh] flex flex-col justify-center items-center p-8 rounded-lg shadow-2xl">
-            <h2 className="text-[1.5rem] md:text-[2rem] font-bold mb-4 text-center">{item.title}</h2>
-            <img src={item.image} alt={item.title} className="w-3/4 h-1/2 rounded-lg shadow-lg mb-4" />
-            <p className="text-center text-[1rem] px-4">{item.description}</p>
-          </div>
+          <div
+            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
+            style={{ transform: "skewY(-12deg) translateX(10%)" }}
+          ></div>
         </div>
-      ))}
+        <div className="w-full md:w-1/2 p-8 md:p-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Data Preprocessing and Feature Engineering
+          </h2>
+          <p className="text-lg">
+            The dataset used for this study was obtained from a standard dataset and consists of multiple patient records containing clinical attributes (16) relevant to hypercholesterolemia prediction. The key steps in data preprocessing included: Handling Missing Values, Feature Selection, Normalization & Standardization, Categorical Encoding, and Train-Test Split.
+          </p>
+        </div>
+      </div>
+
+      {/* Section 2 */}
+      <div
+        ref={(el) => (sectionRefs.current[1] = el)}
+        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center flex-row-reverse"
+      >
+        <div
+          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
+          style={{ backgroundImage: "url('/AI_brain.jpg')" }}
+        >
+          <div
+            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
+            style={{ transform: "skewY(12deg) translateX(-10%)" }}
+          ></div>
+        </div>
+        <div className="w-full md:w-1/2 p-8 md:p-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Machine Learning Models
+          </h2>
+          <p className="text-lg">
+            We experimented with multiple supervised learning models to determine the best algorithm for predicting long-term hypercholesterolemia risk. The models implemented were: Naïve Bayes, K-Nearest Neighbors, Decision Trees, Random Forest, Logistic Regression, Support Vector Machine, and XGBoost.
+          </p>
+        </div>
+      </div>
+
+      {/* Section 3 */}
+      <div
+        ref={(el) => (sectionRefs.current[2] = el)}
+        className="w-full py-16 md:py-24 transition-opacity duration-500 opacity-0 transform translate-y-20 flex items-center justify-center"
+      >
+        <div
+          className="w-full md:w-1/2 h-[300px] md:h-[500px] bg-cover bg-center relative overflow-hidden"
+          style={{ backgroundImage: "url('/Futuristic.jpg')" }}
+        >
+          <div
+            className="absolute inset-0 bg-black opacity-30 skew-y-6 md:skew-y-12 transform origin-bottom-left"
+            style={{ transform: "skewY(-12deg) translateX(10%)" }}
+          ></div>
+        </div>
+        <div className="w-full md:w-1/2 p-8 md:p-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Framework and Tools
+          </h2>
+          <p className="text-lg">
+            The implementation used Python with Scikit-learn, Pandas, NumPy, Matplotlib, and Seaborn. Development environments included Jupyter Notebook and Google Colab.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
