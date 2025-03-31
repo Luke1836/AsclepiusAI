@@ -30,7 +30,7 @@ export default function Hypercholesterolemia()
 
   return (
     <>
-      <RoutingHeader visible={`bg-[#30493D] sticky top-0 transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'translate-y-0' : '-translate-y-full border-b-none'}`} />
+      <RoutingHeader visible={`bg-[#30493D] sticky top-[0%] transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'translate-y-[0] top-[2%] rounded-[0.75rem]' : '-translate-y-full border-b-none top'}`} />
 
       <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center py-[2rem]">
         <div className="p-4 bg-[#CED1BF] text-[#30493D] w-[95%] rounded-2xl flex flex-col items-center">
@@ -74,7 +74,7 @@ export default function Hypercholesterolemia()
               <ul className="list-disc list-inside space-y-2 pl-4">
                 <li><span className="font-medium">Unhealthy Diet:</span> High intake of saturated fats, trans fats, and processed foods.</li>
                 <li><span className="font-medium">Lack of Physical Activity:</span> Sedentary lifestyle leading to poor cholesterol metabolism.</li>
-                <li><span className="font-medium">Obesity:</span>Obesity: Increases LDL while decreasing protective HDL (high-density lipoprotein) cholesterol.</li>
+                <li><span className="font-medium">Smoking & Alcohol Consumption:</span> Increases LDL while decreasing protective HDL (high-density lipoprotein) cholesterol.</li>
                 <li><span className="font-medium">Obesity:</span> Excess body weight contributes to higher cholesterol levels.</li>
               </ul>
             </div>
@@ -98,7 +98,7 @@ export default function Hypercholesterolemia()
                 <li><span className="font-medium">Atherosclerosis:</span> Cholesterol buildup in arteries leading to narrowing and hardening.</li>
                 <li><span className="font-medium">Heart Disease:</span> Increased risk of heart attacks due to restricted blood flow.</li>
                 <li><span className="font-medium">Stroke:</span> Reduced blood supply to the brain due to blocked arteries.</li>
-                <li><span className="font-medium">Atherosclerosis:</span> Inherited conditions like Familial Hypercholesterolemia (FH).</li>
+                <li><span className="font-medium">Peripheral Artery Disease (PAD):</span> Inherited conditions like Familial Hypercholesterolemia (FH).</li>
               </ul>
             </div>
           </div>
