@@ -6,6 +6,7 @@ import HealthPage from "./Components/health"
 import ImplementationPage from "./Components/implementation"
 import ContactPage from "./Components/contact"
 import Header from "./Components/header"
+import Footer from "./Components/footer";
 import { useEffect, useState } from 'react';
 
 
@@ -42,6 +43,7 @@ export default function Home()
       <HealthPage />
       <ImplementationPage />
       <ContactPage />
+      <Footer />
     </main>
   )
 }
