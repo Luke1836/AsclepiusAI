@@ -8,7 +8,7 @@ export default function RoutingHeader( { visible } )
 
 
   return (
-    <header className={`w-[95%] lg:w-[90%] mx-auto h-[6rem] xl:h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-50 border-b-2 border-b-[#CED1BF] ${visible}`}>
+    <header className={`w-[95%] lg:w-[90%] mx-auto h-[6rem] xl:h-[8rem] flex flex-row items-center justify-between p-[1.75rem] z-50 border-2 border-[#CED1BF] bg-[#426350] ${visible}`}>
       <div className="h-[10rem] w-[10rem] grid content-center">
         <Link href="/">
           <img src="/Logo.png" alt="Company's logo" />

@@ -30,7 +30,11 @@ export default function Hypercholesterolemia()
 
   return (
     <>
-      <RoutingHeader visible={`bg-[#30493D] sticky top-[0%] transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'translate-y-[0] top-[2%] rounded-[0.75rem]' : '-translate-y-full border-b-none top'}`} />
+      <RoutingHeader visible={`sticky transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${
+          isVisible
+            ? 'translate-y-[0] top-[2%] rounded-[0.75rem]' 
+            : '-translate-y-full top-[-10px]'
+        }`} />
 
       <section className="h-auto w-full bg-[#30493D] flex flex-row items-center justify-center py-[2rem]">
         <div className="p-4 bg-[#CED1BF] text-[#30493D] w-[95%] rounded-2xl flex flex-col items-center">
