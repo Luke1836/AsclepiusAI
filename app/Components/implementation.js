@@ -15,9 +15,9 @@ export default function ImplementationPage() {
       if (image) {
         gsap.fromTo(
           image,
-          { y: "-10%" },
+          { y: "-15%" },
           {
-            y: "10%",
+            y: "15%",
             ease: "none",
             scrollTrigger: {
               trigger: sectionRefs.current[index],
