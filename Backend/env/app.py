@@ -48,7 +48,7 @@ def predict():
 
 
         # Mapping prediction output to readable values
-        predDict = {0: "Negative", 1: "Positive"}
+        predDict = {0: "Low Likelihood of Hypercholesterolemia 🟢", 1: "Increased Likelihood of Hypercholesterolemia 🔴"}
         result = predDict.get(prediction[0], "Error in prediction")
 
         return jsonify(result=result)  # Send JSON response
