@@ -6,19 +6,21 @@ import RoutingHeader from "./routeHeader";
 export default function Hypercholesterolemia() {
   const [formData, setFormData] = useState({
     Age: "",
-    Gender: "1", // Default to Male (1)
+    Gender: "1",
     hba1c: "",
     TG: "",
     LDL: "",
     HDL: "",
     VLDL: "",
+    total_cholestrol: "",
     BMI: "",
     SBP: "",
     DBP: "",
-    hypertension: "0", // Default to No (0)
-    diabetes: "0", // Default to No (0)
+    alcoholic: "0",
+    hypertension: "0", 
+    diabetes: "0", 
     waist: "",
-    family_history: "0", // Default to No (0)
+    family_history: "0", 
     hypercholesterolemia: ""
   });
 
@@ -80,7 +82,7 @@ export default function Hypercholesterolemia() {
                 ) : 
                 
                 /* Hypertension, Diabetes, Family History Dropdown */
-                ["hypertension", "diabetes", "family_history"].includes(key) ? (
+                ["hypertension", "diabetes", "family_history", "alcoholic"].includes(key) ? (
                   <select
                     id={key}
                     name={key}
