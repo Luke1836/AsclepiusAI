@@ -3,12 +3,14 @@ import numpy as np
 import pickle
 from flask_cors import CORS
 
-# Load model and scaler
+# Loading the model
 model = pickle.load(open('svm_model.pkl', 'rb'))
 sc = pickle.load(open('svm_scaler.pkl', 'rb'))
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "http://localhost:3000"}})  # Allows requests from frontend (Next.js)
+
+# Requests from the frontend
+CORS(app, resources={r"/predict": {"origins": "http://localhost:3000"}}) 
 
 @app.route("/")
 def index():
@@ -17,9 +19,8 @@ def index():
 @app.route("/predict", methods=['POST'])
 def predict():
     try:
-        data = request.json  # Receiving JSON data from frontend
+        data = request.json
 
-        # Extract relevant features from the incoming data
         features = [
             float(data['hba1c']),
             float(data['TG']),
@@ -33,14 +34,12 @@ def predict():
             float(data['family_history'])
         ]
 
-        # Convert input to a NumPy array and reshape for prediction
         input_data = np.array(features).reshape(1, -1)
 
-        # Apply scaling
         scaled_input = sc.transform(input_data)
 
-        # Make prediction
         prediction = model.predict(scaled_input)
+
 
         # Mapping prediction output to readable values
         predDict = {0: "Negative", 1: "Positive"}
