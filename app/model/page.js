@@ -5,16 +5,20 @@ import RoutingHeader from "./routeHeader";
 
 export default function Hypercholesterolemia() {
   const [formData, setFormData] = useState({
+    Age: "",
+    Gender: "1", // Default to Male (1)
     hba1c: "",
     TG: "",
     LDL: "",
+    HDL: "",
+    VLDL: "",
     BMI: "",
     SBP: "",
     DBP: "",
-    hypertension: "",
-    diabetes: "",
+    hypertension: "0", // Default to No (0)
+    diabetes: "0", // Default to No (0)
     waist: "",
-    family_history: "",
+    family_history: "0", // Default to No (0)
     hypercholesterolemia: ""
   });
 
@@ -52,24 +56,55 @@ export default function Hypercholesterolemia() {
         <h2 className="text-[2.5rem] text-center font-bold mb-4">Hypercholesterolemia Prediction</h2>
 
         <form onSubmit={handleSubmit} className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-          {Object.keys(formData).map((key) =>
-            key !== "hypercholesterolemia" ? (
+          {Object.keys(formData).map((key) => {
+            if (key === "hypercholesterolemia") return null;
+
+            return (
               <div key={key} className="flex flex-col">
                 <label className="font-semibold capitalize" htmlFor={key}>
                   {key.replace('_', ' ')}
                 </label>
-                <input
-                  type="text"
-                  id={key}
-                  name={key}
-                  value={formData[key]}
-                  onChange={handleChange}
-                  className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:bg-[#CED1BF] focus:outline-none "
-                  required
-                />
+
+                {/* Gender Dropdown */}
+                {key === "Gender" ? (
+                  <select
+                    id={key}
+                    name={key}
+                    value={formData[key]}
+                    onChange={handleChange}
+                    className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:outline-none"
+                  >
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                  </select>
+                ) : 
+                
+                /* Hypertension, Diabetes, Family History Dropdown */
+                ["hypertension", "diabetes", "family_history"].includes(key) ? (
+                  <select
+                    id={key}
+                    name={key}
+                    value={formData[key]}
+                    onChange={handleChange}
+                    className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:outline-none"
+                  >
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                ) : (
+                  <input
+                    type="text"
+                    id={key}
+                    name={key}
+                    value={formData[key]}
+                    onChange={handleChange}
+                    className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:bg-[#CED1BF] focus:outline-none"
+                    required
+                  />
+                )}
               </div>
-            ) : null
-          )}
+            );
+          })}
 
           <div className="w-full flex flex-row justify-center items-center col-span-1 md:col-span-2">
             <button

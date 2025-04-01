@@ -22,9 +22,13 @@ def predict():
         data = request.json
 
         features = [
+            float(data['Age']),
+            float(data['Gender']),
             float(data['hba1c']),
             float(data['TG']),
             float(data['LDL']),
+            float(data['HDL']),
+            float(data['VLDL']),
             float(data['BMI']),
             float(data['SBP']),
             float(data['DBP']),
