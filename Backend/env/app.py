@@ -99,7 +99,7 @@ def predict():
 
         prediction = model.predict(scaled_input)
 
-        predDict = {0:"negative",1: "positive" }
+        predDict = {0:"Negative",1: "Positive" }
 
 
         if prediction[0] in predDict:
