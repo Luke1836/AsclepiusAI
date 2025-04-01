@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hypercholesterolemia Detection</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f7f4; 
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+   
+      .navbar {
+        background-color: #4caf50; /* Green */
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 30px 30px; /* Rounded bottom of navbar */
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Container Styles */
+      .container {
+        width: 80%; /* Reduced width */
+        max-width: 900px; /* Reduced maximum width */
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+
+      h1 {
+        color: #388e3c; /* Dark Green */
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.6em;
+        font-weight: 600;
+      }
+
+      /* Flexbox for rows to align input fields properly */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      /* Flexbox column styles */
+      .col-md-4 {
+        flex: 1;
+        min-width: 220px; /* Prevent input fields from becoming too narrow */
+      }
+
+      .col-md-12 {
+        flex: 1;
+        min-width: 100%;
+      }
+
+      /* Form Styles */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Label Styles */
+      label {
+        font-size: 1.1em;
+        color: #555;
+        font-weight: 600;
+      }
+
+      /* Input and select field styles */
+      input[type="number"],
+      select {
+        width: 100%; /* Make the input fields span the full width of their container */
+        padding: 12px;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        background-color: #f4f4f1; /* Soft cream background for inputs */
+        font-size: 1.1em;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+
+      /* Input focus effect */
+      input[type="number"]:focus,
+      select:focus {
+        border-color: #4caf50; /* Green */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(72, 201, 79, 0.3);
+        outline: none;
+      }
+
+      /* Button Styles */
+      button {
+        background-color: #388e3c; /* Dark Green */
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: auto;
+        margin: 0 auto; /* Center the button */
+        display: block; /* Make the button block-level for centering */
+      }
+
+      button:hover {
+        background-color: #2c6c2f; /* Darker green */
+        transform: translateY(-4px); /* Subtle lift effect */
+      }
+
+      button:active {
+        transform: translateY(2px); /* Pressed effect */
+      }
+
+      /* Card Styles */
+      .card {
+        background-color: #f1f8f6; /* Light greenish background */
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 30px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-title {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .card-text {
+        font-size: 1.1em;
+        color: #555;
+      }
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .col-md-4 {
+          flex: 1;
+          min-width: 220px; /* Ensure input fields don't shrink too much */
+        }
+        .col-md-12 {
+          flex: 1;
+          min-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--=======================navbar=====================================================-->
+    <div class="navbar">
+      <a href="http://localhost:3000/modal">
+        Hypercholesterolemia Detection Using Machine Learning
+      </a>
+    </div>
+
+    <!--==========================================================================================-->
+    <div class="container">
+      <h1>Hypercholesterolemia Detection</h1>
+
+      <!-- Adding form -->
+      <form action="/predict" method="POST">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="HbA1c">HbA1c</label>
+            <input
+              type="number"
+              id="HbA1c"
+              name="HbA1c"
+              step="0.01"
+              min="0"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="TG">TG</label>
+            <input type="number" id="TG" name="TG" required />
+          </div>
+          <div class="col-md-4">
+            <label for="LDL">LDL</label>
+            <input type="number" id="LDL" name="LDL" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="BMI">BMI</label>
+            <input type="number" id="BMI" name="BMI" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="SBP">SBP</label>
+            <input type="number" id="SBP" name="SBP" required />
+          </div>
+          <div class="col-md-4">
+            <label for="DBP">DBP</label>
+            <input type="number" id="DBP" name="DBP" required />
+          </div>
+          <div class="col-md-4">
+            <label for="Hypertension">Hypertension</label>
+            <select id="Hypertension" name="Hypertension" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Diabetes">Diabetes</label>
+            <select id="Diabetes" name="Diabetes" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Waist_cir">Waist Circumference</label>
+            <input type="number" id="Waist_cir" name="Waist_cir" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="FH">Family History</label>
+            <select id="FH" name="FH" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit">Predict</button>
+          </div>
+        </div>
+      </form>
+
+      {% if result %}
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Result:</h5>
+          <p class="card-text">{{ result }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
