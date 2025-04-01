@@ -4,8 +4,8 @@ import pickle
 from flask_cors import CORS
 
 # Load model and scaler
-model = pickle.load(open('knn_model.pkl', 'rb'))
-sc = pickle.load(open('scaler.pkl', 'rb'))
+model = pickle.load(open('svm_model.pkl', 'rb'))
+sc = pickle.load(open('svm_scaler.pkl', 'rb'))
 
 app = Flask(__name__)
 CORS(app, resources={r"/predict": {"origins": "http://localhost:3000"}})  # Allows requests from frontend (Next.js)

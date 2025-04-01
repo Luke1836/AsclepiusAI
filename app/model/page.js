@@ -64,7 +64,7 @@ export default function Hypercholesterolemia() {
                   name={key}
                   value={formData[key]}
                   onChange={handleChange}
-                  className="border border-gray-400 p-2 rounded-md"
+                  className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:bg-[#CED1BF] focus:outline-none "
                   required
                 />
               </div>
