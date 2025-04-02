@@ -4,8 +4,7 @@ import pickle
 from flask_cors import CORS
 
 # Loading the model
-model = pickle.load(open('svm_model.pkl', 'rb'))
-sc = pickle.load(open('svm_scaler.pkl', 'rb'))
+model = pickle.load(open('RF_model.pkl', 'rb'))
 
 app = Flask(__name__)
 
@@ -42,9 +41,7 @@ def predict():
 
         input_data = np.array(features).reshape(1, -1)
 
-        scaled_input = sc.transform(input_data)
-
-        prediction = model.predict(scaled_input)
+        prediction = model.predict(input_data)
 
 
         # Mapping prediction output to readable values

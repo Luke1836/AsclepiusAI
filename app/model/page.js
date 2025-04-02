@@ -25,7 +25,19 @@ export default function Hypercholesterolemia() {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    let updatedFormData = { ...formData, [name]: value };
+
+    // Calculate total_cholestrol if LDL, HDL, and TG are available
+    if (["LDL", "HDL", "TG"].includes(name)) {
+      const LDL = parseFloat(updatedFormData.LDL) || 0;
+      const HDL = parseFloat(updatedFormData.HDL) || 0;
+      const TG = parseFloat(updatedFormData.TG) || 0;
+
+      updatedFormData.total_cholestrol = (LDL + HDL + TG / 5).toFixed(0); 
+    }
+
+    setFormData(updatedFormData);
   };
 
   const handleSubmit = async (e) => {
@@ -81,7 +93,7 @@ export default function Hypercholesterolemia() {
                   </select>
                 ) : 
                 
-                /* Hypertension, Diabetes, Family History Dropdown */
+                /* Hypertension, Diabetes, Family History, Alcoholic Dropdown */
                 ["hypertension", "diabetes", "family_history", "alcoholic"].includes(key) ? (
                   <select
                     id={key}
