@@ -9,7 +9,6 @@ import Header from "./Components/header"
 import Footer from "./Components/footer";
 import { useEffect, useState } from 'react';
 
-
 export default function Home()
 {
   const [isVisible, setIsVisible] = useState(true);

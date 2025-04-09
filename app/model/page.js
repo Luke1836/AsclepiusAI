@@ -24,11 +24,10 @@ export default function Hypercholesterolemia() {
     hypercholesterolemia: ""
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     let updatedFormData = { ...formData, [name]: value };
 
-    // Calculate total_cholestrol if LDL, HDL, and TG are available
     if (["LDL", "HDL", "TG"].includes(name)) {
       const LDL = parseFloat(updatedFormData.LDL) || 0;
       const HDL = parseFloat(updatedFormData.HDL) || 0;
