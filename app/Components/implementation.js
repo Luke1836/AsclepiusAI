@@ -86,7 +86,7 @@ export default function ImplementationPage() {
             Machine Learning Models
           </h2>
           <p className="text-lg">
-            We experimented with multiple supervised learning models to determine the best algorithm for predicting long-term hypercholesterolemia risk. The models implemented were: Naïve Bayes, K-Nearest Neighbors, Decision Trees, Random Forest, Logistic Regression, Support Vector Machine, and XGBoost.
+            We experimented with multiple supervised learning models to determine the best algorithm for predicting long-term hypercholesterolemia risk. The models implemented were: Linear Regression, K-Nearest Neighbors, Decision Trees, Random Forest, Logistic Regression, and Support Vector Machine. Random Forest proved to be the superior model.
           </p>
         </div>
       </div>
