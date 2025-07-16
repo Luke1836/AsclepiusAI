@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 
-
 export default function Header({ visible  }) 
 {
   const navItems = "capitalize font-sans text-[1rem] md:text-lg text-[#CED1BF] shadow-text-light hover:text-[#41A1BC]";
-  const btnStyles = "capitalize font-sans w-[8rem] py-2 blur-background-max shadow-text-light hover:text-[#41A1BC] text-[1.25rem]";
+  const btnStyles = " capitalize font-sans w-[8rem] py-1 shadow-text-light hover:text-[#CED1BF] text-[1.25rem] text-[#41A1BC]";
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -59,9 +58,9 @@ export default function Header({ visible  })
           </dd>
         </dl>
       </div>
-      <div className="text-[#CED1BF] md:flex flex-row gap-2 pl-[1rem] lg:pl-[2rem] hidden">
+      <div className="md:flex flex-row gap-2 hidden p-0 rounded-2xl">
         <Link href="/model">
-          <button className={btnStyles}>Try it Out</button>
+          <button className={`${btnStyles}`}>Try it Out</button>
         </Link>
       </div>
     </header>

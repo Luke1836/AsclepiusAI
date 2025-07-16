@@ -32,7 +32,7 @@ export default function ImplementationPage() {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-tr to-[#00576d] from-[#110454] overflow-hidden">
+    <section className="w-full bg-gradient-to-tr to-[#00b2de] from-[#0e043c] overflow-hidden">
       {/* Section 1 */}
       <div
         ref={(el) => {
@@ -94,7 +94,7 @@ export default function ImplementationPage() {
         ref={(el) => {
           if (el) sectionRefs.current[2] = el;
         }}
-        className="w-full py-16 md:py-24 flex items-center justify-center bg-gradient-to-tr from-[#006b70] to-[#064b3f] text-[#CED1BF] origin-bottom p-8"
+        className="w-full py-16 md:py-24 flex items-center justify-center bg-gradient-to-tr from-[#048ea0] to-[#004c40] text-[#CED1BF] origin-bottom p-8"
         
       >
         <div className="w-full md:w-1/2 h-[300px] md:h-[500px] relative overflow-hidden" style={{ transform: "skewY(6deg)" }}>

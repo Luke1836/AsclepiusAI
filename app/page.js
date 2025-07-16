@@ -35,7 +35,7 @@ export default function Home()
     <main className="relative">
       {
         lastScrollY > 250 &&
-        (<Header visible={`w-[95%] lg:w-[90%] bg-[#015551] mx-auto sticky transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'top-[2%] translate-y-0 border-2 border-[#CED1BF] rounded-[1rem]' : '-translate-y-full top-[-10px] border-b-none'}`} />)
+        (<Header visible={`w-[95%] lg:w-[90%] bg-[#001] mx-auto sticky transition-transform duration-300 ease-[cubic-bezier(0.25, 1, 0.5, 1)] ${isVisible ? 'top-[2%] translate-y-0 border-2 border-[#CED1BF] rounded-[1rem]' : '-translate-y-full top-[-10px] border-b-none'}`} />)
       }
       <Video />
       <AboutPage />
