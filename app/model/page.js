@@ -17,8 +17,8 @@ export default function Hypercholesterolemia() {
     SBP: "",
     DBP: "",
     alcoholic: "0",
-    hypertension: "0", 
-    diabetes: "0", 
+    physical_activity: "",
+    smoking: "",
     waist: "",
     family_history: "0", 
     hypercholesterolemia: ""
@@ -91,9 +91,22 @@ export default function Hypercholesterolemia() {
                     <option value="0">Female</option>
                   </select>
                 ) : 
-                
-                /* Hypertension, Diabetes, Family History, Alcoholic Dropdown */
-                ["hypertension", "diabetes", "family_history", "alcoholic"].includes(key) ? (
+                key === "physical_activity" ? (
+                  <select 
+                    id={key}
+                    name={key}
+                    value={formData[key]}
+                    onChange={handleChange}
+                    className="border border-gray-400 p-2 rounded-md bg-[#CED1BF] focus:outline-none"
+                  >
+                    <option value="VL">Very Low</option>
+                    <option value="L">Low</option>
+                    <option value="M">Moderate</option>
+                    <option value="H">High</option>
+                  </select>
+                )
+                :
+                ["smoking", "family_history", "alcoholic"].includes(key) ? (
                   <select
                     id={key}
                     name={key}
